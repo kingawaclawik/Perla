@@ -1,0 +1,24 @@
+mixin generateRwdImage(imageSrc, imageType, imageAlt)
+  img.visible-lg-block(src='assets/img/'+imageSrc+'-lg.'+imageType, alt=imageAlt, width="100%")
+  img.visible-md-block(src='assets/img/'+imageSrc+'-md.'+imageType, alt=imageAlt, width="100%")
+  img.visible-sm-block(src='assets/img/'+imageSrc+'-sm.'+imageType, alt=imageAlt, width="100%")
+  img.visible-xs-block(src='assets/img/'+imageSrc+'-xs.'+imageType, alt=imageAlt, width="100%")
+
+section#exportMap.padding-top-m
+  .container
+    .row
+      .col-xs-12.padding-bottom-s
+        h1.special-h1.text-center Our Export Map
+    .row
+      .col-xs-12.col-lg-10.col-lg-offset-1.padding-top-s.padding-bottom-l
+        //+generateRwdImage('img-export','jpg','Map of the world with marked countries to which Perła beer is exported')
+        img(src='assets/img/img-map.svg', alt='', width="100%")
+        //.hidden-md.hidden-lg.padding-bottom-s
+    .row.center-container
+      .col-xs-12.col-md-10.col-md-offset-1.text-justify
+        p.lead We export to 
+          b 16 countries 
+          | around the world, on every continent. We are still developing our export and we are trying to attract distributors both in countries to which we already export our beers and on new markets. In Europe we currently export our beer to Great Britain, Spain, France, Greece, Italy, Holland, Estonia, Sweden and Russia. We are exploring exotic markets and you can find our beer in Africa in Zambia, Ghana, Cameroon, Benin, in South America in Paraguay and also in Australia. And of course we export our beer to the 
+          b United States of America
+          | .
+        

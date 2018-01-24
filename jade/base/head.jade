@@ -1,0 +1,36 @@
+mixin head(title, desc, secondLvl)
+  head
+    block metaTags
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      title=title
+      meta(name='description', content=desc)
+      meta(name='author', content='Ad-Ventures by Kinga Waclawik')
+      meta(http-equiv="Cache-control",content="public")
+      include ./fav.jade
+      +fav(secondLvl)
+      include ./social-media.jade
+      // Bootstrap core CSS
+      if (secondLvl)
+        //link(href='./../css/bootstrap.min.css?07112016', rel='stylesheet')
+        link(href='./../css/bootstrap.css?06122017', rel='stylesheet')
+      else
+        //link(href='css/bootstrap.min.css?07112016', rel='stylesheet')
+        link(href='css/bootstrap.css?06122017', rel='stylesheet')
+      link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400|Oswald:400,700|Rajdhani:500', rel='stylesheet')
+      // Facebook Pixel Code
+      script.
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '372282946526729');
+        fbq('track', 'PageView');
+      noscript
+        img(height='1', width='1', style='display:none', src='https://www.facebook.com/tr?id=372282946526729&ev=PageView&noscript=1')
+      // End Facebook Pixel Code

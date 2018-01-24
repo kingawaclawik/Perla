@@ -1,0 +1,50 @@
+mixin navLeft(secondLvl)
+  -var pageSrc = ''
+  if(secondLvl)
+    - var pageSrc = './../'
+  ul.nav.navbar-nav.navbar-left
+    li: a.padding-left-none(href="history.html") History
+    li: a(href="homeland.html") Our Homeland  
+    li: a(href="beer.html") Our Beer  
+    li: a(href="contact.html") Contact
+
+mixin buildNav(mainPage)
+  nav.navbar.navbar-default.navbar-fixed-top.affix-top(data-spy="affix" data-offset-top="230")
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed.container(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+          .row.center-container
+            .col-xs-5.center-col.text-left
+              img.logo-top(src='assets/img/logo.svg', alt="Perla's logo", itemprop='logo', width='100px')
+            .col-xs-2.col-xs-offset-5.center-col.text-right
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+      if(mainPage)
+        #navbar.navbar-collapse.collapse.nav-affix--main
+          .logo-center
+            .container
+              .row.center-container
+                .hidden-xs.col-sm-2.col-sm-offset-5.center-col.text-center
+                  block logo
+                    a.navbar-brand.navbar-brand--center(href='index.html')
+                      img.logo-top(src='assets/img/logo.svg', alt="Perla's logo", itemprop='logo')
+          .row.center-container.nav-affix.nav-affix--main
+            .hidden-xs.col-sm-2.center-col.text-center
+              block logo2
+                a.navbar-brand(href='index.html')
+                  img.logo-top(src='assets/img/logo.svg', alt="Perla's logo", itemprop='logo')
+            .col-xs-12.col-sm-10.center-col
+              block navLeft
+                +navLeft(false)
+      else
+        #navbar.navbar-collapse.collapse
+          .row.center-container
+            .hidden-xs.col-sm-2.center-col.text-center
+              block logo2
+                a.navbar-brand(href='index.html')
+                  img.logo-top(src='assets/img/logo.svg', alt="Perla's logo", itemprop='logo')
+            .col-xs-12.col-sm-10.center-col
+              block navLeft
+                +navLeft(false)

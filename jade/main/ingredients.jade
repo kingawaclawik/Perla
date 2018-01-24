@@ -1,0 +1,39 @@
+mixin desc(title, desc, icon)
+  //i.icon.icon-xl.hidden-xs(class=icon)
+  h3.text-uppercase !{title}
+  p.lead !{desc}
+
+mixin image(img, icon)
+  .position-relative
+    video.img-circle(autoplay='', loop='', muted='', poster='assets/img/bg-video-'+img+'-md.jpg', width="100%")
+      source(src='assets/video/video-'+img+'-md.mp4', type='video/mp4')
+    i.icon.icon-xxl.icon-ingredients(class=icon)
+  
+mixin step(title, desc, icon, img, right)
+  .row.center-container.padding-top-m
+    if right
+      .hidden-xs
+        .col-xs-3.col-sm-5.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-4.col-lg-offset-1.center-col
+          +image(img, icon)
+        .col-xs-7.col-sm-7.col-sm-offset-0.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-1.center-col.text-left
+          +desc(title, desc, icon)
+    else 
+      .hidden-xs.col-sm-7.col-sm-offset-0.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-1.center-col.text-right
+          +desc(title, desc, icon)
+      .hidden-xs.col-sm-5.col-sm-offset-0.col-md-4.col-md-offset-1.col-lg-4.col-lg-offset-1.center-col
+        +image(img, icon)
+    .hidden-sm.hidden-md.hidden-lg
+      .col-xs-10.col-xs-offset-1
+        +image(img, icon)
+      .col-xs-12.text-center
+        +desc(title, desc, icon)
+
+section#ingredients.padding-top-m.padding-bottom-m
+  .container(itemprop="material")
+    .row
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-12.col-md-offset-0.padding-bottom-s
+        h1.special-h1.text-center Our Secret Is In The Ingredients
+    +step("1. Best Barley", "Barley is a key ingredient in our brewing process. Traditionally a two-row barley is used in German and English beers, but we use our own secret ingredients to ensure Barley of the highest quality.","icon_barley", "barley")
+    +step("2. Polish Hops", "The first use of Hops in brewing dates back to the 9th century. Poland is the 5th largest producer in the world of Hops. As we are the least industrialized area of Poland - we produce the highest quality of Hops, balancing the sweetness of the malt with bitterness, allowing for an exquisite taste and aroma.","icon_hop", "hop", true)
+    +step("3. Cold Water", "Our water flows freely straight from the springs of Poland. It's as tasty as they get. Our brewing process keeps the water at exactly at 12.5 degrees Celsius.  Clean water is one of the most important aspects of brewing as 90 to 95% of beer is water.","icon_water", "water")
+    +step("4. Recipe", "Perla uses a traditional bottom-brewing process with cold water that allows the Yeast cells to drop to the bottom for the fermentation process. Although this is a time-consuming brewing process, it ensures Perla's consistent premium quality.","icon_beer", "yeast", true)

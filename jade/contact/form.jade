@@ -1,0 +1,70 @@
+mixin form()
+  form.position-relative.box.js-submit-form(action='php/contact-form.php', method='post', name='contactform', role='form')
+    .alert.alert-danger.special-alert.error.close.alert.alert-warning(style="display:none;")
+    .js-alert-container.text-left
+    .special-overlay.center-container.js-overlay
+      .center-col
+        .row.js-fail.text-center(style="display:none;")
+          h2.special-h1.special-h1-small.padding-bottom-l Sorry something went wrong :(
+          button.btn.btn-lg.btn-danger.btn-gradient.btn-block.btn-symbol.js-overlay-close Try again
+        .row.js-success.text-center.panel.panel-default.color-default(style="display:none;")
+          .col-xs-12.padding-top-m
+            h1.special-h1.special-h1-small.margin-top-none Thank you for your submission
+            p.lead.padding-top-xs
+              | We will let you know about the results till October 15th on &nbsp
+              b.js-contact-number mail@mail.com
+          .col-xs-10.col-xs-offset-1
+            p.lead.padding-bottom-xs
+              | If you have additional questions feel free to contact us as at
+              a(href='mailto:info@ad-ventures.pl', itemprop='telephone') info@ad-ventures.pl
+    .js-apply-form
+      .row
+        .col-md-12
+          h3.margin-top-none Contact Us
+          p.margin-bottom-s Find out more
+          .form-group
+            .form-container
+              input#name.form-control.input-lg.form-input.js-email(type='text', name="name", required)
+              label.form-label.form-label-lg(for="name")  Name
+            .form-container
+              input#email.form-control.input-lg.form-input.js-email(type='email', name="email", required)
+              label.form-label.form-label-lg(for="email")  E-mail
+            .form-container
+              input#email.form-control.input-lg.form-input.js-email(type='phone', name="phone", required)
+              label.form-label.form-label-lg(for="phone")  Phone
+            .form-container
+              select#country.form-control.input-lg.form-select.js-country(name="email", required)
+                each val in ['Australia', 'Benin', 'Cameroon', 'Estonia', 'France', 'Ghana', 'Great Britain', 'Greece', 'Holland', 'Italy', 'Paraguay', 'Russia', 'Spain', 'Sweden', 'United States of America', 'Zambia', 'Other']
+                  if (val=='United States of America')
+                    option(value=val,selected)=val
+                  else
+                    option(value=val)=val
+              label.form-label.form-label-lg(for="country") Country
+            .form-container
+              textarea#desc.form-control.input-lg.padding-top-l.js-desc(type='text', name="desc", rows="5")
+              label.form-label.form-label-lg(for="desc") Short description
+            input#name.hidden.js-robottest(type='text', name="robottest", require)
+      .row.padding-top-xs
+        .col-md-12
+          button.btn.btn-lg.btn-primary.btn-gradient.btn-block.btn-symbol.js-submit(type="submit") Send
+section
+  .container
+    .row.padding-top-s.padding-bottom-l
+      .col-xs-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-1
+        +form()
+      .col-lg-5.margin-top-s
+        img.logo-top(src='assets/img/logo.svg', alt="Perla's logo", itemprop='logo', width='200px')
+        h2 Perla USA, LLC 
+        h5.text-uppercase a subsidiary of 
+          br 
+          | Perla Browary Lubelskie, S.A.
+        p.lead 19c Trolley Square
+        p.lead Wilmington, DE 19806
+        p
+          b.text-uppercase USA: 
+          a.link-transperent(href="tel:+13026606315") +1 302 660 6315
+        p.padding-top-xxs
+          b.text-uppercase Email: 
+          a.link-transperent(href="email:4beer@perlabeverages.Com") 4beer@perlabeverages.com 
+      
+        //img(src='assets/img/img-beer-watercolor.jpg', width="100%")

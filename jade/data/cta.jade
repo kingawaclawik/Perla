@@ -1,0 +1,63 @@
+block ctaVars
+  - air = {}
+  - air.sectionId = 'CTA-air'
+  - air.title = 'Join the Demo Day and win an Air Purifier!'
+  - air.paragraph = 'For all people coming for the Demo Day we have exciting news one of you is coming back home with air purifier'
+  
+  - oldBrewery = {}
+  - oldBrewery.sectionId = 'CTA-old-brewery'
+  - oldBrewery.title = '<b>Heritage</b> Makes Our Beer'
+  - oldBrewery.history = true
+  
+  - lubelszczyzna = {}
+  - lubelszczyzna.sectionId = 'CTA-lubelszczyzna'
+  - lubelszczyzna.title = 'The <b>Least-Industrialized</b> Region of Europe'
+  - lubelszczyzna.location = true
+  //- prize.paragraph2 = '*up to 50 beers on an event on us!'
+
+  - young = {}
+  - young.sectionId = 'CTA-young'
+  - young.title = 'Young people in Europe choose Perła'
+  - young.paragraph = 'And you? What will you choose?'
+
+  - countryside = {}
+  - countryside.sectionId = 'CTA-countryside'
+  - countryside.title = 'Help us share the news!'
+  - countryside.paragraph = 'Share this site with your friends'
+  
+  - seeyou = {}
+  - seeyou.sectionId = 'CTA-seeyou'
+  - seeyou.title = 'See you there!'
+  - seeyou.paragraph = 'Want to join us as a partner and help make this program better?'
+  
+  - team = {}
+  - team.sectionId = 'CTA-team'
+  - team.title = 'Lorem ipsum dolor sit amet'
+  - team.paragraph = 'Sed cursus turpis aliquet, malesuada felis et, feugiat felis. Donec non lorem venenatis, ornare quam nec, feugiat leo.'
+  - team.team = true
+  
+  - three = {}
+  - three.sectionId = 'CTA-3'
+  - three.title = 'Lorem ipsum dolor sit amet'
+  - three.paragraph = 'Sed cursus turpis aliquet, malesuada felis et, feugiat felis. Donec non lorem venenatis, ornare quam nec, feugiat leo.'
+ 
+  - four = {}
+  - four.sectionId = 'CTA-4'
+  - four.title = 'Lorem ipsum dolor sit amet'
+  - four.paragraph = 'Sed cursus turpis aliquet, malesuada felis et, feugiat felis. Donec non lorem venenatis, ornare quam nec, feugiat leo.'
+
+  - five = {}
+  - five.sectionId = 'CTA-5'
+  - five.title = 'Lorem ipsum dolor sit amet'
+  - five.paragraph = 'Sed cursus turpis aliquet, malesuada felis et, feugiat felis. Donec non lorem venenatis, ornare quam nec, feugiat leo.'
+
+  - six = {}
+  - six.sectionId = 'CTA-6'
+  - six.title = 'Lorem ipsum dolor sit amet'
+  - six.paragraph = 'Sed cursus turpis aliquet, malesuada felis et, feugiat felis. Donec non lorem venenatis, ornare quam nec, feugiat leo.'
+
+
+  - ctaArray = [oldBrewery, lubelszczyzna, young, countryside, seeyou, air, team, three, four, five, six, share]
+
+block includeCTALayout
+  include ./../cta/mixin.jade

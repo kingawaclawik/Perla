@@ -1,0 +1,26 @@
+mixin CTA(cta)
+  section.cta.padding-top-l.text-center(id=cta.sectionId)
+    .container
+      if (cta.avatar)
+        img.img-circle.hidden-xs.margin-top-minus-xxl(src=cta.avatar.src, alt=cta.avatar.alt, style='width: 170px; height: 170px;')
+      .row.padding-bottom-l
+        .col-xs-12.col-sm-10.col-sm-offset-1
+          h2.cta-header !{cta.title}
+        .col-xs-12.col-xs-offset-0.col-sm-10.col-sm-offset-1
+          if (cta.paragraph)
+            p.lead !{cta.paragraph}
+        if (cta.history)
+          .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.padding-top-s.padding-bottom-m
+            if cta.history
+              a.btn.btn-lg.btn-outline.btn-block(href="history.html", role='button') The history of our brewery
+        else
+          if (cta.location || cta.apply || cta.volunteer || cta.partner)
+            .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4.padding-top-s.padding-bottom-m
+              if cta.location
+                a.btn.btn-lg.btn-outline.btn-block(href="homeland.html", role='button') Our Homeland
+              if cta.apply
+                a.btn.btn-lg.btn-primary.btn-gradient.btn-block(href='#prize', role='button') Find out what prizes we have
+              if cta.volunteer
+                a.btn.btn-lg.btn-primary.btn-gradient.btn-block(href="", target="_blank", role='button') Volunteer!
+              if cta.partner
+                a.btn.btn-lg.btn-primary.btn-gradient.btn-block.btn-info(href='mailto:info@ad-ventures.pl?Subject=Hello Dragon Events' target="_top") Become a Partner

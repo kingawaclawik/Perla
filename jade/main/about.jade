@@ -1,0 +1,19 @@
+img.center-col.margin-top.xs(src='assets/img/img-types.jpg', alt="Current Beer-house", width="100%")
+section#about.padding-top-m.padding-bottom-xs
+  .container
+    //.row
+      .col-xs-10.col-xs-offset-1
+        h1.special-h1.padding-bottom-s.text-center Lorem ipsum dolor
+    //.row
+      .col-xs-12.col-md-10.col-md-offset-1.text-justify
+        p.lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed ligula sapien. Donec accumsan ullamcorper mauris, eu condimentum massa semper vel. Ut a tempor justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce semper mi nec mattis malesuada. Proin tristique ligula felis, vitae consequat odio posuere eu. Ut condimentum est non augue elementum dapibus. Suspendisse potenti. Duis auctor accumsan eleifend. Mauris tristique elit ipsum, eu tristique dui commodo sed.
+        p.lead Nam eleifend, turpis eget fermentum iaculis, ligula augue mollis magna, ac sagittis tortor orci sed diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ornare libero suscipit lacus pretium lacinia ut vel diam. Phasellus dictum metus dui, at scelerisque nibh efficitur non. Pellentesque lectus odio, vehicula eget semper in, euismod nec justo. Morbi sed nisi iaculis, finibus libero in, suscipit sem. Aliquam sollicitudin diam non volutpat suscipit. Suspendisse eget ipsum at libero cursus dignissim.
+    .row.padding-top-s.padding-bottom-s
+      .col-xs-12.col-lg-10.col-lg-offset-1.position-relative
+        i.video-icon.icon.icon-xxl.color-white.icon_play-button.video-icon-int
+        video.hidden-xs.hidden-sm(controls='', poster='assets/img/social-new.gif', width="100%", onclick="this.play();$('.video-icon-int').removeClass('video-icon-int')")
+          source(src='assets/video/video-usa-md.mp4', type='video/mp4')
+        video.hidden-xs.hidden-md.hidden-lg(controls='', poster='assets/img/social-new.gif', width="100%", onclick="this.play();")
+          source(src='assets/video/video-usa-sm.mp4', type='video/mp4')
+        video.hidden-sm.hidden-md.hidden-lg(controls='', poster='assets/img/social-new.gif', width="100%", onclick="this.play();")
+          source(src='assets/video/video-usa-xs.mp4', type='video/mp4')
