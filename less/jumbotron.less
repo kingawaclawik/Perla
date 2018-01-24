@@ -1,0 +1,93 @@
+//
+// Jumbotron
+// --------------------------------------------------
+.jumbotron {
+  margin-bottom: @jumbotron-padding;
+  padding-top: @jumbotron-padding;
+  padding-bottom: @jumbotron-padding;
+  background-color: @jumbotron-bg;
+  color: @jumbotron-color;
+  h1,
+  .h1,
+  h3 {
+    font-family: @jumbotron-heading-font;
+    color: @jumbotron-heading-color;
+  }
+  h1,
+  .h1 {
+    letter-spacing: 7px;
+    text-transform: capitalize;
+    transition: color .5s, letter-spacing .5s;
+    &:after,
+    &:before {
+      content: '';
+      margin: auto;
+      display: block;
+      border-bottom: 1px solid #fff;
+      width: 0%;
+      transition: width .5s;
+    }
+    &.jumbotron-special {
+      letter-spacing: 0;
+      color: @jumbotron-heading-color-hover;
+      &:after,
+      &:before {
+        width: 90%;
+      }
+    }
+  }
+  .big {
+    display: block;
+    margin-top: -@space-m;
+    font-size: (@jumbotron-heading-font-size * 2);
+  }
+  p {
+    margin-bottom: (@jumbotron-padding / 2);
+    font-size: @jumbotron-font-size;
+    font-weight: 200;
+    color: @jumbotron-heading-color;
+  }
+  >hr {
+    border-top-color: darken(@jumbotron-bg, 10%);
+  }
+  .container &,
+  .container-fluid & {
+    padding-left: (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+    border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container
+  }
+  .container {
+    max-width: 100%;
+  }
+  @media screen and (min-width: @screen-sm-min) {
+    padding-top: (@jumbotron-padding * 1.6);
+    padding-bottom: (@jumbotron-padding * 1.6);
+    .container &,
+    .container-fluid & {
+      padding-left: (@jumbotron-padding * 2);
+      padding-right: (@jumbotron-padding * 2);
+    }
+    h1,
+    .h1 {
+      font-size: (@jumbotron-heading-font-size/0.7);
+    }
+    h2,
+    .h2 {
+      font-size: @jumbotron-heading-2-font-size;
+    }
+    .big {
+      display: inline-block;
+      margin-right: -@space-xxs;
+      font-size: (@jumbotron-heading-font-size * 2);
+    }
+  }
+  @media screen and (min-width: @screen-md-min) {
+    h1,
+    .h1 {
+      font-size: (@jumbotron-heading-font-size);
+    }
+    .big {
+      font-size: (@jumbotron-heading-font-size * 2);
+    }
+  }
+}
